@@ -3,15 +3,16 @@ module Board
     module Mappers
       module Postings
         class ResponseMapper
+          include Data::Entities::Postings
 
           def map_to_response(posting)
-            {
+            ResponseEntity.new(
               id: posting.id,
-              title: posting.title,
-              description: posting.description,
+              title: 1.to_s,
+              description: nil,
               qualifications: posting.qualifications,
               benefits: posting.benefits
-            }
+            )
           end
 
           def map_all_to_response(postings)

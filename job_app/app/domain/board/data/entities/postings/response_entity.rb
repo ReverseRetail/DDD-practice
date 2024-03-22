@@ -10,6 +10,7 @@ module Board
     module Entities
       module Postings
         class ResponseEntity < Dry::Struct
+          attribute :id, Types::Strict::Integer
           attribute :title, Types::Strict::String
           attribute :description, Types::Optional::String
           attribute :qualifications, Types::Strict::String
